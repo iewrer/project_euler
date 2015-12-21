@@ -4,16 +4,12 @@ import "fmt"
 
 func main() {
 	limit := 4000000
-	n := 1
-	m := 2
 	sum := 2
-	for ; (n + m) < limit; {
-		nowSum := n + m
-		if nowSum % 2 == 0 {
-			sum += nowSum
+	//使用并行赋值
+	for n, m := 1, 2; (n + m) < limit; n ,m = m, n + m {		
+		if (n + m) % 2 == 0 {
+			sum += n + m
 		}
-		n = m
-		m = nowSum
 	}
 	fmt.Println(sum)
 }
