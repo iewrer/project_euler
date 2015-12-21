@@ -18,6 +18,6 @@ nextfibo n m limit amount =
 --使用模式匹配完成的更优雅的写法
 nextfibo1 :: Integer -> Integer -> Integer -> Integer -> Integer
 nextfibo1 n m limit amount
-    | ((n + m) < limit  && (n + m) `mod` 2 == 0) = nextfibo1 m (n + m) limit amount + n + m
-    | ((n + m) < limit  && (n + m) `mod` 2 /= 0) = nextfibo1 m (n + m) limit amount
+    | ((n + m) < limit && (n + m) `mod` 2 == 0) = nextfibo1 m (n + m) limit amount + n + m
+    | ((n + m) < limit && (n + m) `mod` 2 /= 0) = nextfibo1 m (n + m) limit amount
     | otherwise = amount
